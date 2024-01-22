@@ -1,0 +1,39 @@
+.description {
+  width: 350px;
+}
+
+.form-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field-box {
+  width: 500px;
+}
+
+.wrapper {
+  margin: 100px;
+}
+
+.form {
+  display: flex;
+  gap: 100px;
+}
+
+.finalize-box {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.save-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.error-box {
+  margin-top: 50px;
+  width: 100%;
+}

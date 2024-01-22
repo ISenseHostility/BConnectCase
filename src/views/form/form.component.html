@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <h1> Company Details </h1>
+
+  <div class="form">
+    <div class="field-box">
+      <field #companyname [label]="'Company Name'" [required]="true"></field>
+      <field #phonenumber [label]="'Phone Number'" [required]="true"></field>
+
+      <div class="form-field">
+        <label> Employees </label>
+        <mat-form-field>
+          <mat-label>Employees</mat-label>
+          <mat-select [(ngModel)]="emplInput" #employees required>
+            <mat-option *ngFor="let option of emplOptions" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <field #cocnumber [label]="'CoC Number'" [required]="true"></field>
+      <field #vatnumber [label]="'VAT Number'" [required]="true"></field>
+      <field #iban [label]="'IBAN'" [required]="true"></field>
+      <field #budget [label]="'Budget'"></field>
+    </div>
+
+    <div class="finalize-box">
+      <div class="form-field">
+        <label> Description </label>
+        <mat-form-field class="description">
+          <mat-label> Description </mat-label>
+          <textarea [(ngModel)]="descInput" cdkTextareaAutosize maxlength="1000" #description matInput required></textarea>
+          <mat-hint align="end">{{description.value.length}} / 1000</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="save-button-wrapper">
+        <button (click)="saveData()" mat-flat-button color="primary"> Save </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <mat-chip-listbox>
+      <mat-chip *ngFor="let error of errors" highlighted color="warn"> {{ error.msg }} </mat-chip>
+    </mat-chip-listbox>
+  </div>
+</div>
